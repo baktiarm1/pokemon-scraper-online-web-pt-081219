@@ -5,18 +5,12 @@ class Pokemon
  def initialize(keywords)
  end
 
- def self.save
-   if self.id
-     self.update
-   else
-     sql = <<-SQL
-       INSERT INTO pokemon (name, type)
-       VALUES (?,?)
-     SQL
+ def self.save(name, type, db)
+   db.execute (
+   "INSERT INTO pokemon (name, type)
+    VALUES (?,?)"
+   name, type)
 
-     DB[:conn].execute(sql, self.name, self.type)
-     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
-   end
  end
 
 
