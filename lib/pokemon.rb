@@ -5,7 +5,7 @@ class Pokemon
  def initialize(id:, name:, type:, db:)
  end
 
- def save
+ def self.save
    if self.id
      self.update
    else
