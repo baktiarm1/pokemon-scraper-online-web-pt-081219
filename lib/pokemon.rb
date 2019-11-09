@@ -2,7 +2,7 @@ class Pokemon
 
 
 
- def initialize(id:, name:, type:, db:)
+ def self.initialize(id:, name:, type:, db:)
  end
 
  def self.save
